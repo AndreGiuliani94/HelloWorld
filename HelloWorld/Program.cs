@@ -7,7 +7,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // value type
+                                                                            // value type
 
             int intero;
             
@@ -21,7 +21,7 @@ namespace HelloWorld
             
             decimal valoreDecimale;
 
-            // reference type
+                                                                            // reference type string array oblject
 
             string insiemeDiCaratteri;
 
@@ -38,22 +38,14 @@ namespace HelloWorld
 
             object oggetto;
 
-            Person luca = new Person("Luca", "Lippi");                     //ho ISTANZIATO un nuovo oggetto Person
-            luca.età = 18;
+            Person luca = new Person("Luca", "Lippi", 1.80, 80);                     //ho ISTANZIATO un nuovo oggetto Person
 
-            Console.WriteLine(luca.Anagrafica());
-
-            Person giovanni = luca;
-
-            giovanni.nome = "Giovanni";
-
-            Console.WriteLine(luca.Anagrafica());
-            Console.WriteLine(giovanni.Anagrafica());
-
-
-
-
-
+            if (luca.altezza !=0 && luca.peso !=0)
+            {
+                Console.WriteLine("Il BMI di " + luca.Anagrafica() + " è " + luca.CalcoloBMI());
+            }
+            else
+                Console.WriteLine("Il BMI è -1");
         }
     }
 }
